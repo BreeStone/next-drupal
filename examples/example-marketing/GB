@@ -1,0 +1,101 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
+
+export default function GreenBankHome() {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-green-100 to-green-300 p-6">
+      <section className="text-center py-16 max-w-4xl mx-auto">
+        <motion.h1 
+          className="text-5xl font-bold text-green-900 mb-4"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Go Natural. Go Strong. Go Green Bank.
+        </motion.h1>
+        <p className="text-lg text-green-800 mb-6">
+          Processed cheese isn’t just causing indigestion—it's damaging your brain's health and clarity. Stop processing your body. Fuel your mind and body the right way.
+        </p>
+        <Button className="bg-green-700 hover:bg-green-800 text-white px-6 py-3 text-lg rounded-2xl shadow-lg">
+          Shop Natural Cheese
+        </Button>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-10">
+        <Card className="bg-white rounded-2xl shadow-xl">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold text-green-900 mb-2">100% Pure Ingredients</h2>
+            <p className="text-green-800">No additives. No preservatives. Just wholesome, creamy goodness made fresh from grass-fed cows.</p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-white rounded-2xl shadow-xl">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold text-green-900 mb-2">Support Brain Health</h2>
+            <p className="text-green-800">Our natural cheeses are rich in essential fats, amino acids, and nutrients that enhance brain function and focus.</p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-white rounded-2xl shadow-xl">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold text-green-900 mb-2">Better Digestion</h2>
+            <p className="text-green-800">Say goodbye to bloat and gut issues. Green Bank cheese supports healthy digestion and nutrient absorption.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="text-center mt-16">
+        <motion.h2 
+          className="text-3xl font-bold text-green-900 mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          Join the Natural Movement
+        </motion.h2>
+        <p className="text-green-800 mb-6">
+          Discover the difference that natural cheese can make in your health journey. Your mind and body deserve the best.
+        </p>
+        <Button className="bg-green-700 hover:bg-green-800 text-white px-8 py-3 text-lg rounded-2xl shadow-lg">
+          Explore Our Products
+        </Button>
+      </section>
+
+      <section className="max-w-6xl mx-auto mt-20">
+        <h2 className="text-3xl font-bold text-green-900 text-center mb-8">Our Cheeses</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { name: "Farmhouse Cheddar", desc: "Sharp, tangy, and rich with natural flavor." },
+            { name: "Creamy Herb Goat", desc: "Smooth and tangy with real organic herbs." },
+            { name: "Aged Alpine", desc: "Nutty and bold—aged to perfection." }
+          ].map((item, idx) => (
+            <Card key={idx} className="bg-white rounded-2xl shadow-lg">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-green-900 mb-2">{item.name}</h3>
+                <p className="text-green-800">{item.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-green-200 mt-20 py-12 px-4 rounded-2xl max-w-4xl mx-auto text-center">
+        <h2 className="text-2xl font-bold text-green-900 mb-4">Subscribe for Updates & Offers</h2>
+        <p className="text-green-800 mb-4">Be the first to know about new cheese drops, recipes, and seasonal specials!</p>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <Input placeholder="Your email" className="rounded-xl p-3 w-64" />
+          <Button className="bg-green-700 text-white px-6 py-2 rounded-xl">Sign Up</Button>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto text-center mt-20">
+        <h2 className="text-3xl font-bold text-green-900 mb-4">Our Story</h2>
+        <p className="text-green-800 leading-relaxed">
+          I started Green Bank after years of struggling with the effects of processed foods. Through trial and error, I experienced firsthand how natural, clean ingredients can transform your health and clarity. Severe body pain, brain fog, and fatigue all taught me that nature always knows best. Green Bank is more than cheese—it's a movement toward healing, nourishment, and living vibrantly. Come taste the difference and feel the transformation.
+        </p>
+      </section>
+    </main>
+  );
+}
